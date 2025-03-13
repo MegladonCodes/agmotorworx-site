@@ -3,6 +3,7 @@ const supabaseUrl = 'https://iclyyxcdhxwlhvjeqntv.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljbHl5eGNkaHh3bGh2amVxbnR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE4MzgwNDQsImV4cCI6MjA1NzQxNDA0NH0.3QV-8VNIatxSJj6KfVv65S94Jy19XZS3hfNQz8TnThk';
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
+
 // Function to fetch product data from Supabase
 async function fetchProducts() {
     const { data, error } = await supabaseClient

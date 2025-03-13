@@ -178,6 +178,8 @@ footer {
     background-color: #222;
     padding: 30px 0;
     color: #888;
+    position: relative;
+    min-height: 100px; /* Ensure footer has some height */
 }
 
 .footer-content {
@@ -205,24 +207,14 @@ footer {
     font-size: 14px;
 }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+footer .footer-content {
+    padding-bottom: 40px; /* Add padding to make space for the copyright */
 }
 
-.social-icon {
-    width: 30px;
-    height: 30px;
-    margin: 0 5px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.copyright {
+footer .copyright {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     text-align: center;
     padding: 10px 0;
     background-color: #111;

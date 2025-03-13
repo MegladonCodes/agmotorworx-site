@@ -15,21 +15,11 @@ let products = []; // Will store products fetched from Supabase
 const productsPerPage = 8;
 let currentPage = 1;
 
-function showLoading() {
-    loading.classList.remove('d-none');
-}
-function hideLoading() {
-    loading.classList.add('d-none');
-}
-
-
 // Fetch products from Supabase
 async function fetchProducts() {
     try {
 
-        showLoading();
         let { data: products, error } = await supabaseClient.from('products').select('*');
-        hideLoading();
         if (error) {
             console.error('Error loading products:', error);
             return;

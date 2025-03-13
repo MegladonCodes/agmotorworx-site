@@ -190,9 +190,11 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #222;
     padding: 30px 0;
-    color: #fff;
+    color: #888;
+    position: relative;
+    min-height: 100px; /* Ensure footer has some height */
 }
 
 .footer-content {
@@ -208,8 +210,7 @@ footer {
 .footer-section h3 {
     margin-bottom: 15px;
     font-size: 16px;
-    font-weight: normal;
-    letter-spacing: 1px;
+    color: #ccc;
 }
 
 .footer-section ul {
@@ -221,28 +222,17 @@ footer {
     font-size: 14px;
 }
 
-.social-icons {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
+footer .footer-content {
+    padding-bottom: 40px; /* Add padding to make space for the copyright */
 }
 
-.social-icon {
-    width: 30px;
-    height: 30px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #333;
-}
-
-.copyright {
+footer .copyright {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     text-align: center;
     padding: 10px 0;
-    background-color: #222;
+    background-color: #111;
     color: #666;
     font-size: 12px;
-    margin-top: 30px;
 }
