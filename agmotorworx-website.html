@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/img/ag.ico">
+    <title>AG Motorworx - Performance Automotive Services</title>
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/img/ag-logo.png" alt="AG Motorworx Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="agmotorworx-website.html">Home</a></li>
+                    <li><a href="agmotorworx-about-page.html">About Us</a></li>
+                    <li><a href="agmotorworx-services-page.html">Services</a></li>
+                    <li><a href="agmotorworx-contact-page.html">Contact</a></li>
+                    <li><a href="agmotorworx-shop-page.html">Shop</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">🛒</div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- <img src="./img/ag-hero.jpg" alt="AG Motorworx Performance" class="hero-logo"> -->
+    </section>
+    
+    <!-- Tagline -->
+    <section class="tagline">
+        <h2>PROVEN PERFORMANCE, RECORD-BREAKING RESULTS.</h2>
+    </section>
+    
+    <!-- Features -->
+    <section class="features container">
+        <div class="feature">
+            <h3>PROVEN TRACK RECORD</h3>
+            <p>Our work speaks for itself. We are known as a reflection of the fastest cars in the country and in the world.</p>
+        </div>
+        <div class="feature">
+            <h3>TAILORED SOLUTIONS</h3>
+            <p>We don't believe in one-size-fits-all. Every car we work on receives careful attention to meet your exact needs.</p>
+        </div>
+        <div class="feature">
+            <h3>PASSIONATE EXPERTS</h3>
+            <p>Our team consists of true car enthusiasts who are just as excited about your vehicle's potential as you.</p>
+        </div>
+    </section>
+    
+    <!-- Gallery -->
+    <section class="gallery-container">
+        <div class="gallery-image">
+            <img src="/img/hilux.jpg" alt="Performance Car 2">
+        </div>
+        <div class="contact-banner">
+            <h3>Get in touch with our team today</h3>
+            <p>Speak to us for a quote</p>
+            <a href="https://wa.me/27818479871" class="whatsapp-button">WHATSAPP</a>
+        </div>
+        <div class="gallery-image">
+            <img src="/img/PT7r.jpg" alt="Performance Car 2">
+        </div>
+        <div class="gallery-image">
+            <img src="/img/PTbmw.jpg" alt="Performance Car 2">
+        </div>
+    </section>
+    
+    <!-- Service Features -->
+    <div class="container">
+        <section class="service-feature">
+            <h2>AFTER-SALES SERVICE</h2>
+            <p>Customer satisfaction is at the heart of what we do. Our team always goes the extra mile to ensure our clients are 100% satisfied.</p>
+            <hr style="border: 1.5px solid white; width: 75%; margin: 20px auto;">
+        </section>
+        <section class="service-feature">
+            <h2>QUALITY WORKMANSHIP</h2>
+            <p>We stand by our workmanship - always ensuring that you receive the highest quality of work.</p>
+            <hr style="border: 1.5px solid white; width: 75%; margin: 20px auto;">
+        </section>
+        <section class="service-feature">
+            <h2>PROFESSIONALISM</h2>
+            <p>Customer satisfaction and professional service is at our heart. Experience the difference with the AGMotorworx team.</p>
+            <hr style="border: 1.5px solid white; width: 75%; margin: 20px auto;">
+        </section>
+    </div>
+    
+
+    <!-- Approved Dealers -->
+    <section class="approved-dealers">
+        <h2>APPROVED DEALER</h2>
+        <div class="dealer-logos">
+            <button class="nav-button prev">&lt;</button>
+            <div class="slide-container">
+                <div class="slide">
+                    <img src="/img/promo/coolboost.jpg" alt="CoolBoost Logo" class="dealer-logo">
+                </div>
+                <div class="slide">
+                    <img src="/img/promo/cpi.jpg" alt="CPI Performance Logo" class="dealer-logo">
+                </div>
+                <div class="slide">
+                    <img src="/img/promo/nf.jpg" alt="NF Logo" class="dealer-logo">
+                </div>
+                <div class="slide">
+                    <img src="/img/promo/ob1.jpg" alt="OB1 Logo" class="dealer-logo">
+                </div>
+                <div class="slide">
+                    <img src="/img/promo/vp.jpg" alt="VP Logo" class="dealer-logo">
+                </div>
+            </div>
+            <button class="nav-button next">&gt;</button>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slideContainer = document.querySelector('.slide-container');
+            const slides = document.querySelectorAll('.slide');
+            const prevButton = document.querySelector('.prev');
+            const nextButton = document.querySelector('.next');
+            
+            let currentIndex = 0;
+            const slideCount = slides.length;
+            
+            // Clone first and last slides for infinite effect
+            const firstSlideClone = slides[0].cloneNode(true);
+            const lastSlideClone = slides[slideCount - 1].cloneNode(true);
+            
+            slideContainer.appendChild(firstSlideClone);
+            slideContainer.insertBefore(lastSlideClone, slides[0]);
+            
+            // Set initial position
+            slideContainer.style.transform = `translateX(-${100 / (slideCount + 2)}%)`;
+            
+            function goToSlide(index) {
+                // Add 1 to account for the cloned slide at the beginning
+                slideContainer.style.transition = 'transform 0.6s ease-in-out';
+                slideContainer.style.transform = `translateX(-${(index + 1) * (100 / (slideCount + 2))}%)`;
+                currentIndex = index;
+            }
+            
+            function nextSlide() {
+                if (currentIndex === slideCount - 1) {
+                    // If at the last slide, quickly jump to the clone without transition
+                    goToSlide(currentIndex + 1);
+                    setTimeout(() => {
+                        slideContainer.style.transition = 'none';
+                        slideContainer.style.transform = `translateX(-${100 / (slideCount + 2)}%)`;
+                        currentIndex = 0;
+                    }, 600);
+                } else {
+                    goToSlide(currentIndex + 1);
+                }
+            }
+            
+            function prevSlide() {
+                if (currentIndex === 0) {
+                    // If at the first slide, quickly jump to the clone without transition
+                    goToSlide(currentIndex - 1);
+                    setTimeout(() => {
+                        slideContainer.style.transition = 'none';
+                        slideContainer.style.transform = `translateX(-${slideCount * (100 / (slideCount + 2))}%)`;
+                        currentIndex = slideCount - 1;
+                    }, 600);
+                } else {
+                    goToSlide(currentIndex - 1);
+                }
+            }
+            
+            // Set event listeners
+            prevButton.addEventListener('click', prevSlide);
+            nextButton.addEventListener('click', nextSlide);
+            
+            // Auto-rotate slides
+            const slideInterval = setInterval(nextSlide, 3000);
+            
+            // Pause on hover
+            slideContainer.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            slideContainer.addEventListener('mouseleave', () => {
+                clearInterval(slideInterval);
+                setInterval(nextSlide, 3000);
+            });
+            
+            // Reset transition after manual slide change
+            slideContainer.addEventListener('transitionend', () => {
+                if (currentIndex === -1) {
+                    slideContainer.style.transition = 'none';
+                    currentIndex = slideCount - 1;
+                    slideContainer.style.transform = `translateX(-${(currentIndex + 1) * (100 / (slideCount + 2))}%)`;
+                } else if (currentIndex === slideCount) {
+                    slideContainer.style.transition = 'none';
+                    currentIndex = 0;
+                    slideContainer.style.transform = `translateX(-${(currentIndex + 1) * (100 / (slideCount + 2))}%)`;
+                }
+            });
+        });
+    </script>
+
+    <!-- Contact Footer -->
+    <section class="contact-footer">
+        <div class="contact-info container">
+            <div class="contact-section">
+                <h3>CALL US</h3>
+                <p>+27 81 847 9871</p>
+            </div>
+            <div class="contact-section">
+                <h3>EMAIL US</h3>
+                <p>contact@agmotorworx.co.za</p>
+            </div>
+            <div class="contact-section">
+                <h3>OPENING HOURS</h3>
+                <p>Mon - Fri 9am - 5pm</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-section">
+                <p>Since 2018</p>
+            </div>
+            <div class="footer-section">
+                <h3>OUR SERVICES</h3>
+                <ul>
+                    <li>Vehicle ECU/TCU Tuning</li>
+                    <li>Performance Part Imports</li>
+                    <li>Dyno Testing</li>
+                    <li>Performance Products</li>
+                    <li>Engine Building</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>VISIT US</h3>
+                <p>Abilene Park, Amanzimtoti, Durban</p>
+            </div>
+        </div>
+        
+        <div class="social-icons">
+            <div class="social-icon">f</div>
+            <div class="social-icon">in</div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2024 AGMOTORWORX - BUILT IN DURBAN</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,267 @@
+ /* General Styles */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #888;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+nav ul li a:hover {
+    color: #ff6c00;
+}
+
+.cart-icon {
+    font-size: 20px;
+}
+
+
+.start-now {
+    color: purple;
+    margin-left: 10px;
+}
+
+.store-hero {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.product-filters {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 5%;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-card-details {
+    padding: 15px;
+}
+
+.product-card-details h3 {
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.product-card-details .price {
+    color: #ff6c00;
+    font-weight: bold;
+}
+
+.product-details-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.product-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-info{
+    color: black; /* Change the heading color to black */
+    margin-bottom: 15px;
+}
+
+.product-info .price {
+    color: orange; /* Change the price color to orange */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.call-to-action {
+    display: inline-block;
+    background-color:#000;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.call-to-action:hover {
+    background-color: #e65c00;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-info {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .product-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Contact*/
+.contact-footer {
+    background-color: #ff9933;
+    padding: 20px 0;
+    color: #ffffff;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-section {
+    text-align: center;
+}
+
+.contact-section h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.contact-section p {
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    padding: 30px 0;
+    color: #888;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #111;
+    color: #666;
+    font-size: 12px;
+}
