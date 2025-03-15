@@ -43,7 +43,9 @@
         <div class="contact-form-section-container">
             <div class="contact-form">
                 <h2>Contact Us</h2>
-                <form id="contact-form">
+                <form id="contact-form"  method="POST">
+                    <input type="hidden" name="access_key" value="34866c73-e7d7-415f-8753-f9a0564a0289">
+
                     <div class="form-group">
                       <label for="name">Name</label>
                       <input type="text" id="name" name="name" required>
@@ -59,11 +61,14 @@
                       <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
                   
-                    <!-- Honeypot field - hidden from users but bots will fill it -->
-                    <input type="text" name="website" style="display:none">
+                     <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <!-- Custom Confirmation / Success Page -->
+                    <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
                   
                     <button type="submit">Send Message</button>
-                    <p id="form-status" aria-live="polite"></p>
+                    <div id="result"></div>
                   </form>
             </div>
             <div class="contact-info-form">
@@ -73,49 +78,19 @@
                 <p><strong>Opening Hours:</strong><br/> Mon - Fri 9am - 5pm</p>
             </div>
         </div>
-
-        <script>
-            const form = document.getElementById('contact-form');
-            const formStatus = document.getElementById('form-status');
-          
-            form.addEventListener('submit', async (e) => {
-              e.preventDefault();
-              
-              // Show loading state
-              formStatus.textContent = 'Sending...';
-              
-              const formData = new FormData(form);
-              const formValues = Object.fromEntries(formData.entries());
-              
-              try {
-                const response = await fetch('/api/submit-form', {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify(formValues),
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok) {
-                  // Success
-                  formStatus.textContent = 'Thank you! Your message has been sent.';
-                  form.reset();
-                  setTimeout(() => {
-                    formStatus.textContent = '';
-                  }, 5000);
-                } else {
-                  // API returned an error
-                  throw new Error(result.error || 'Failed to send message');
-                }
-              } catch (error) {
-                formStatus.textContent = error.message || 'Something went wrong. Please try again.';
-              }
-            });
-          </script>
-
     </section>
+
+    <!-- Custom Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close" id="popup-close">&times;</span>
+            <div class="popup-message">
+                <div class="popup-icon">&#10004;</div>
+                <p>Message Sent</p>
+                <button id="popup-close-btn">Close</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Contact Footer -->
     <section class="contact-footer">
@@ -162,6 +137,5 @@
         </div>
     </footer>
     <script src="./js/contact.js"></script>
-    <script src="./email.js"></script>
 </body>
 </html>
