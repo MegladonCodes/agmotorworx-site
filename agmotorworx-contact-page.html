@@ -43,21 +43,28 @@
         <div class="contact-form-section-container">
             <div class="contact-form">
                 <h2>Contact Us</h2>
-                <form id="contactForm" action="mailto:MikhailGOVENDER@gmail.com" method="post" enctype="text/plain"></form>
+                <form id="contact-form">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                      <label for="name">Name</label>
+                      <input type="text" id="name" name="name" required>
                     </div>
+                  
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" required>
                     </div>
+                  
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                      <label for="message">Message</label>
+                      <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
+                  
+                    <!-- Honeypot field - hidden from users but bots will fill it -->
+                    <input type="text" name="website" style="display:none">
+                  
                     <button type="submit">Send Message</button>
-                </form>
+                    <p id="form-status" aria-live="polite"></p>
+                  </form>
             </div>
             <div class="contact-info-form">
                 <h2>Contact Information</h2>
@@ -66,6 +73,48 @@
                 <p><strong>Opening Hours:</strong><br/> Mon - Fri 9am - 5pm</p>
             </div>
         </div>
+
+        <script>
+            const form = document.getElementById('contact-form');
+            const formStatus = document.getElementById('form-status');
+          
+            form.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              
+              // Show loading state
+              formStatus.textContent = 'Sending...';
+              
+              const formData = new FormData(form);
+              const formValues = Object.fromEntries(formData.entries());
+              
+              try {
+                const response = await fetch('/api/submit-form', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(formValues),
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                  // Success
+                  formStatus.textContent = 'Thank you! Your message has been sent.';
+                  form.reset();
+                  setTimeout(() => {
+                    formStatus.textContent = '';
+                  }, 5000);
+                } else {
+                  // API returned an error
+                  throw new Error(result.error || 'Failed to send message');
+                }
+              } catch (error) {
+                formStatus.textContent = error.message || 'Something went wrong. Please try again.';
+              }
+            });
+          </script>
+
     </section>
 
     <!-- Contact Footer -->
@@ -113,5 +162,6 @@
         </div>
     </footer>
     <script src="./js/contact.js"></script>
+    <script src="./email.js"></script>
 </body>
 </html>
