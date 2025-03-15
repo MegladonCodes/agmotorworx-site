@@ -190,7 +190,7 @@
             nextButton.addEventListener('click', nextSlide);
             
             // Auto-rotate slides
-            const slideInterval = setInterval(nextSlide, 3000);
+            const slideInterval = setInterval(nextSlide, 10000);
             
             // Pause on hover
             slideContainer.addEventListener('mouseenter', () => {
@@ -199,7 +199,7 @@
             
             slideContainer.addEventListener('mouseleave', () => {
                 clearInterval(slideInterval);
-                setInterval(nextSlide, 3000);
+                setInterval(nextSlide, 10000);
             });
             
             // Reset transition after manual slide change
