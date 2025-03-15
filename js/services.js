@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     burgerMenu.addEventListener('click', toggleMenu);
 
     function handleResize() {
-        console.log(window.innerWidth);
         if (window.innerWidth <= 768) {
             burgerMenu.style.display = 'flex';
             navLinks.style.display = 'none';

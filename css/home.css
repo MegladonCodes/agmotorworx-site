@@ -96,7 +96,6 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    height: 10vh;
 }
 
 .header-content {
@@ -106,9 +105,8 @@ header {
     height: 100%;
 }
 
-.logo img {
-    width: 100%;
-    height: auto;
+.logo {
+    width: 150px;
 }
 
 nav ul {
@@ -200,7 +198,7 @@ nav ul li a:hover {
 
 .gallery-image img {
     width: 100%;
-    height: 180px;
+    height: 350px;
     object-fit: contain;
 }
 
@@ -451,10 +449,14 @@ footer .copyright {
     }
 
     .hero {
-        height: 50vh;
+        height: 25vh;
     }
 
     .features {
+        flex-direction: column;
+    }
+
+    .gallery-container{
         flex-direction: column;
     }
 
@@ -493,11 +495,11 @@ footer .copyright {
     }
 
     .contact-banner h3 {
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .contact-banner p {
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .whatsapp-button {

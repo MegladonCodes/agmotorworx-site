@@ -220,6 +220,7 @@ nav ul li a:hover {
     width: calc(33.333% - 40px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    min-width: 15vw;
 }
 
 .service-item h2 {
@@ -328,6 +329,16 @@ footer .copyright {
 
     .footer-content {
         flex-direction: column;
+    }
+
+    .service-list{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 80%;
     }
 }
 

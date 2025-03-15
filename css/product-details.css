@@ -347,7 +347,7 @@ nav ul li a:hover {
         flex-direction: column;
     }
     
-    .add-to-cart-btn, .call-to-order-btn {
+    .call-to-order-btn {
         width: 100%;
         text-align: center;
     }
@@ -465,6 +465,10 @@ footer .copyright {
 
     .footer-content {
         flex-direction: column;
+    }
+
+    .product-image-container{
+        width: 100%;
     }
 }
 
