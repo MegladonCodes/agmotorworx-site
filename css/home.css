@@ -1,5 +1,5 @@
- /* General Styles */
- * {
+/* General Styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,6 +17,72 @@ body {
     padding: 0 15px;
 }
 
+/* Burger Menu Styles */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links.mobile {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 90px; /* Adjust based on the height of your header */
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links.mobile.active {
+    display: flex;
+    align-items: end;
+}
+
+.nav-links.mobile.active li {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.nav-links.mobile a {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    color: #333;
+}
+
+.nav-links.mobile a:hover {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.mobile {
+        display: flex;
+    }
+}
+
 /* Header */
 header {
     background-color: #fff;
@@ -32,8 +98,9 @@ header {
     align-items: center;
 }
 
-.logo {
+.logo img {
     width: 120px;
+    height: auto;
 }
 
 nav ul {
@@ -57,40 +124,20 @@ nav ul li a:hover {
     color: #ff6c00;
 }
 
-.cart-icon {
-    font-size: 20px;
-}
-
-/* Wix Notice */
-.wix-notice {
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 12px;
-    color: #333;
-}
-
-.wix-notice button {
-    background-color: transparent;
-    border: 1px solid #333;
-    padding: 3px 10px;
-    border-radius: 20px;
-    margin-left: 10px;
-    cursor: pointer;
-}
 
 /* Hero Section */
 .hero {
     width: 100%;
-    height: 65vh;
+    height: 65vw;
     background-image: url('/img/ag-hero.jpg'); /* Placeholder for background */
-    background-size: cover;
+    background-size: 100% auto; /* Adjust background size to be responsive */
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
+
 
 .hero-logo {
     max-width: 60%;
@@ -380,4 +427,109 @@ footer .copyright {
 
 .next {
     right: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .gallery {
+        flex-direction: column;
+    }
+
+    .gallery-image img {
+        height: auto;
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo {
+        max-width: 80%;
+    }
+
+    .tagline h2 {
+        font-size: 16px;
+    }
+
+    .feature h3 {
+        font-size: 14px;
+    }
+
+    .feature p {
+        font-size: 12px;
+    }
+
+    .contact-banner h3 {
+        font-size: 14px;
+    }
+
+    .contact-banner p {
+        font-size: 12px;
+    }
+
+    .whatsapp-button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .service-feature h2 {
+        font-size: 20px;
+    }
+
+    .service-feature p {
+        font-size: 12px;
+    }
+
+    .approved-dealers h2 {
+        font-size: 18px;
+    }
+
+    .dealer-logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contact-section h3 {
+        font-size: 14px;
+    }
+
+    .contact-section p {
+        font-size: 12px;
+    }
+
+    .footer-section h3 {
+        font-size: 14px;
+    }
+
+    .footer-section ul li {
+        font-size: 12px;
+    }
 }
