@@ -19,6 +19,12 @@ body {
     padding: 0 15px;
 }
 
+/* Orange Divider */
+.orange-divider {
+    height: 8px;
+    background-color: #ff9933;
+}
+
 /* Burger Menu Styles */
 .burger-menu {
     display: none;

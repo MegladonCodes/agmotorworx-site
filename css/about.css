@@ -125,17 +125,6 @@ nav ul li a:hover {
     color: #ff9933;
 }
 
-.cart-icon {
-    font-size: 20px;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
 /* Orange Divider */
 .orange-divider {
     height: 8px;
