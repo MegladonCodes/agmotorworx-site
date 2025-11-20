@@ -2,7 +2,7 @@
 deployment:
   tasks:
     # Set the destination path for deployment
-    - export DEPLOYPATH=/home/magmedia/public_html/agmotorworx.magmedia.co.za/
+    - export DEPLOYPATH=/home/magmedia/repositories/agmotorworx.magmedia.co.za/
     # Copy everything (except .git) from the repository root to the deploy path
     - /bin/cp -R ./* $DEPLOYPATH
     # Remove the .git directory if copied
