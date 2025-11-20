@@ -1,0 +1,12 @@
+---
+deployment:
+  tasks:
+    # Set the destination path for deployment
+    - export DEPLOYPATH=/home/magmedia/public_html/agmotorworx.magmedia.co.za/
+    # Copy everything (except .git) from the repository root to the deploy path
+    - /bin/cp -R ./* $DEPLOYPATH
+    # Remove the .git directory if copied
+    - /bin/rm -rf $DEPLOYPATH/.git
+    # (Optional) Set proper file permissions (example: 644 for files, 755 for directories)
+    - find $DEPLOYPATH -type d -exec chmod 755 {} \;
+    - find $DEPLOYPATH -type f -exec chmod 644 {} \;
