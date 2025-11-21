@@ -27,7 +27,7 @@ async function displayProductDetails() {
     const productId = parseInt(urlParams.get('id'));
 
     if (!productId) {
-        productDetailsContainer.innerHTML = '<div class="error-message">Product not found. Please return to the <a href="agmotorworx-shop-page.html">shop page</a>.</div>';
+        productDetailsContainer.innerHTML = '<div class="error-message">Product not found. Please return to the <a href="/Shop">shop page</a>.</div>';
         return;
     }
 
@@ -35,14 +35,14 @@ async function displayProductDetails() {
     const product = products.find(p => p.id === productId);
 
     if (!product) {
-        productDetailsContainer.innerHTML = '<div class="error-message">Product not found. Please return to the <a href="agmotorworx-shop-page.html">shop page</a>.</div>';
+        productDetailsContainer.innerHTML = '<div class="error-message">Product not found. Please return to the <a href="/Shop">shop page</a>.</div>';
         return;
     }
 
     // Display product details
     productDetailsContainer.innerHTML = `
         <div class="breadcrumbs">
-            <a href="agmotorworx-shop-page.html">Shop</a> > ${product.category} > ${product.title}
+            <a href="/Shop">Shop</a> > ${product.category} > ${product.title}
         </div>
         <div class="product-details-content">
             <div class="product-image-container">
@@ -65,7 +65,7 @@ async function displayProductDetails() {
                     <a href="tel:+27818479871" class="call-to-order-btn">Call to Order</a>
                 </div>
                 <div class="back-to-shop">
-                    <a href="agmotorworx-shop-page.html">← Back to Shop</a>
+                    <a href="/Shop">← Back to Shop</a>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@ async function displayProductDetails() {
             <h2>Related Products</h2>
             <div class="related-products-grid">
                 ${getRelatedProducts(products, product).map(relatedProduct => `
-                    <div class="related-product-card" onclick="window.location.href='product-details.html?id=${relatedProduct.id}'">
+                    <div class="related-product-card" onclick="window.location.href='/Product?id=${relatedProduct.id}'">
                         <img src="${relatedProduct.image}" alt="${relatedProduct.title}" class="related-product-image">
                         <h3>${relatedProduct.title}</h3>
                         <p>R${relatedProduct.price.toFixed(2)}</p>
