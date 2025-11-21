@@ -1,0 +1,19 @@
+RewriteEngine On
+RewriteBase /
+
+# Skip rewriting existing files or directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Pretty URLs for static pages
+RewriteRule ^Home/?$ index.html [L,NC]
+RewriteRule ^About/?$ agmotorworx-about-page.html [L,NC]
+RewriteRule ^Services/?$ agmotorworx-services-page.html [L,NC]
+RewriteRule ^Contact/?$ agmotorworx-contact-page.html [L,NC]
+RewriteRule ^Shop/?$ agmotorworx-shop-page.html [L,NC]
+RewriteRule ^Product/?$ product-details.html [L,NC]
+
+# Fallback to home for unmatched routes (optional SPA support)
+RewriteRule ^.*$ index.html [L]
+
