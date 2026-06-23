@@ -7,8 +7,8 @@
 }
 
 body {
-    background-color: #000;
-    color: #fff;
+    background: linear-gradient(180deg, var(--dark) 0%, var(--black) 100%);
+    color: #333;
 }
 
 .container {
@@ -215,7 +215,7 @@ nav ul li a:hover {
 /* Contact Section */
 .contact-form-section {
     padding: 40px 0;
-    background-color: #f8f8f8;
+    background: linear-gradient(180deg, var(--dark) 0%, var(--black) 100%);
     color: #333;
 }
 
@@ -245,7 +245,7 @@ nav ul li a:hover {
 .contact-form, .contact-info-form {
     flex: 1;
     min-width: 300px;
-    background-color: #fff;
+    background-color: var(--gray-light);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -256,9 +256,7 @@ nav ul li a:hover {
 }
 
 .contact-form h2, .contact-info-form h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #ff6c00;
+    font-family: var(--font-body);
 }
 
 .contact-form .form-group {
