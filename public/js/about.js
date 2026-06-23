@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Generate gallery images array
     const galleryImages = imageFilenames.map(filename => ({
-        src: `/img/about/${filename}`,
+        src: `./img/about/${filename}`,
         alt: `Performance Car ${filename.split('_').pop().split('.')[0]}`
     }));
 
