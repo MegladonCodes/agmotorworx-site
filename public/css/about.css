@@ -159,8 +159,9 @@ nav ul li a:hover {
 .about-content p {
     margin-bottom: 20px;
     line-height: 1.6;
-    color: var(--white);
-    font-size: 15px;
+    font-family: var(--font-body);
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .about-image {
@@ -207,12 +208,12 @@ nav ul li a:hover {
 
 
 /* Contact Button */
-.hero-ctas {
+.ontact-btn {
     text-align: center;
     margin: 40px 0;
 }
 
-.hero-ctas .btn {
+.contact-btn {
     display: inline-block;
     background-color: var(--orange, #ff6b00);
     color: white;
@@ -229,7 +230,7 @@ nav ul li a:hover {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.hero-ctas .btn:hover {
+.contact-btn:hover {
     background-color: var(--orange-bright, #ff9500);
     transform: translateY(-2px);
 }
