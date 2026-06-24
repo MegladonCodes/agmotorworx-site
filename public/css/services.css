@@ -37,7 +37,7 @@ body {
     transition: 0.4s;
 }
 
-.nav-links {
+/* .nav-links {
     display: flex;
 }
 
@@ -47,7 +47,7 @@ body {
     width: 100%;
     position: absolute;
     top: 90px; /* Adjust based on the height of your header */
-    left: 0;
+    /* left: 0;
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -68,7 +68,7 @@ body {
     border-top: 1px solid #ddd;
     background-color: #fff;
     color: #333;
-}
+} */ */
 
 .nav-links.mobile a:hover {
     background-color: #f1f1f1;

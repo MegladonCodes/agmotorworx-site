@@ -38,7 +38,7 @@ body {
     transition: 0.4s;
 }
 
-.nav-links {
+/* .nav-links {
     display: flex;
 }
 
@@ -47,7 +47,7 @@ body {
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: 90px; /* Adjust based on the height of your header */
+    top: 90px;
     left: 0;
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 1000;
@@ -73,7 +73,7 @@ body {
 
 .nav-links.mobile a:hover {
     background-color: #f1f1f1;
-}
+} */
 
 @media (max-width: 768px) {
     .burger-menu {
